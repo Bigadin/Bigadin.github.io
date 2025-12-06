@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for i in 2 3 4 5 6)",
+      "Bash(do cp projet-1.html projet-$i.html)",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,524 @@
+/* ==========================================================================
+   Animations - Portfolio Tech Moderne
+   ========================================================================== */
+
+/* ==========================================================================
+   Fade In Animations
+   ========================================================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-slower) var(--ease-out),
+              transform var(--duration-slower) var(--ease-out);
+}
+
+.fade-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais */
+.fade-in--delay-1 { transition-delay: 100ms; }
+.fade-in--delay-2 { transition-delay: 200ms; }
+.fade-in--delay-3 { transition-delay: 300ms; }
+.fade-in--delay-4 { transition-delay: 400ms; }
+.fade-in--delay-5 { transition-delay: 500ms; }
+.fade-in--delay-6 { transition-delay: 600ms; }
+
+/* Directions */
+.fade-in--up { transform: translateY(30px); }
+.fade-in--down { transform: translateY(-30px); }
+.fade-in--left { transform: translateX(-30px); }
+.fade-in--right { transform: translateX(30px); }
+.fade-in--scale { transform: scale(0.95); }
+
+.fade-in--up.fade-in--visible,
+.fade-in--down.fade-in--visible,
+.fade-in--left.fade-in--visible,
+.fade-in--right.fade-in--visible {
+  transform: translate(0, 0);
+}
+
+.fade-in--scale.fade-in--visible {
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   Stagger Animations
+   ========================================================================== */
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-item--visible {
+  animation: staggerIn var(--duration-slower) var(--ease-out) forwards;
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Délais générés */
+.stagger-item:nth-child(1) { animation-delay: 0ms; }
+.stagger-item:nth-child(2) { animation-delay: 80ms; }
+.stagger-item:nth-child(3) { animation-delay: 160ms; }
+.stagger-item:nth-child(4) { animation-delay: 240ms; }
+.stagger-item:nth-child(5) { animation-delay: 320ms; }
+.stagger-item:nth-child(6) { animation-delay: 400ms; }
+.stagger-item:nth-child(7) { animation-delay: 480ms; }
+.stagger-item:nth-child(8) { animation-delay: 560ms; }
+
+/* ==========================================================================
+   Text Reveal Animation
+   ========================================================================== */
+
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal__line {
+  display: block;
+  transform: translateY(100%);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.text-reveal--visible .text-reveal__line {
+  transform: translateY(0);
+}
+
+.text-reveal__line:nth-child(1) { transition-delay: 0ms; }
+.text-reveal__line:nth-child(2) { transition-delay: 80ms; }
+.text-reveal__line:nth-child(3) { transition-delay: 160ms; }
+
+/* ==========================================================================
+   Glow Pulse Animation (tech style)
+   ========================================================================== */
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Floating Animation
+   ========================================================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float--slow {
+  animation-duration: 6s;
+}
+
+.float--fast {
+  animation-duration: 2s;
+}
+
+/* ==========================================================================
+   Gradient Animation
+   ========================================================================== */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ==========================================================================
+   Blink Animation (terminal style)
+   ========================================================================== */
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ==========================================================================
+   Typewriter Effect
+   ========================================================================== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--color-accent);
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-accent); }
+}
+
+/* ==========================================================================
+   Hover Effects
+   ========================================================================== */
+
+.hover-lift {
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform var(--duration-base) var(--ease-spring);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-base) var(--ease-out);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ==========================================================================
+   Link Underline Animation
+   ========================================================================== */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==========================================================================
+   Custom Cursor
+   ========================================================================== */
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: difference;
+}
+
+.cursor__dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: var(--radius-full);
+  transform: translate(-50%, -50%);
+  transition: width var(--duration-fast) var(--ease-out),
+              height var(--duration-fast) var(--ease-out);
+}
+
+.cursor__ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-full);
+  transform: translate(-50%, -50%);
+  transition: width var(--duration-base) var(--ease-out),
+              height var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+
+.cursor--hover .cursor__dot {
+  width: 12px;
+  height: 12px;
+}
+
+.cursor--hover .cursor__ring {
+  width: 60px;
+  height: 60px;
+  border-color: var(--color-accent);
+}
+
+.cursor--click .cursor__dot {
+  width: 6px;
+  height: 6px;
+}
+
+.cursor--click .cursor__ring {
+  width: 30px;
+  height: 30px;
+}
+
+/* ==========================================================================
+   Loading Screen
+   ========================================================================== */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity var(--duration-slow) var(--ease-out),
+              visibility var(--duration-slow) var(--ease-out);
+}
+
+.loading-screen--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.loading-spinner::before,
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+}
+
+.loading-spinner::before {
+  border-top-color: var(--color-accent);
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner::after {
+  border-right-color: var(--color-accent-secondary);
+  animation: spin 1.5s linear infinite reverse;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Scroll Indicator
+   ========================================================================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+}
+
+.scroll-indicator__icon {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator__wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(12px);
+  }
+}
+
+/* ==========================================================================
+   Background Grid Animation
+   ========================================================================== */
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.bg-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, var(--color-bg) 70%);
+}
+
+/* ==========================================================================
+   Spotlight Effect
+   ========================================================================== */
+
+.spotlight {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+/* ==========================================================================
+   Page Transitions
+   ========================================================================== */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 9999;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--duration-slow) var(--ease-in-out);
+}
+
+.page-transition--enter {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.page-transition--exit {
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+/* ==========================================================================
+   Magnetic Button Effect
+   ========================================================================== */
+
+.magnetic {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+/* ==========================================================================
+   Shimmer Effect
+   ========================================================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-tertiary) 0%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg-tertiary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .stagger-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cursor {
+    display: none;
+  }
+}

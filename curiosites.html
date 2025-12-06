@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curiosites - Yanis Hemdane - Game Dev, Danse & Passions">
+  <meta name="author" content="Yanis Hemdane">
+  <meta name="theme-color" content="#0a0a0b">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+  <title>Curiosites — Yanis Hemdane</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Background Grid -->
+  <div class="bg-grid"></div>
+  <div class="spotlight" id="spotlight"></div>
+
+  <div class="page">
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="index.html" class="header__logo">
+            <span class="header__logo-dot"></span>
+            yanis.h
+          </a>
+
+          <nav class="header__nav" id="nav">
+            <a href="index.html" class="header__link">Accueil</a>
+            <a href="projects.html" class="header__link">Projets</a>
+            <a href="curiosites.html" class="header__link header__link--active">Curiosites</a>
+          </nav>
+
+          <div class="header__status">
+            <span class="header__status-dot"></span>
+            Recherche alternance
+          </div>
+
+          <button class="header__menu-btn" id="menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="page__content">
+      <section class="section" style="padding-top: 120px;">
+        <div class="container">
+          <!-- En-tete de page -->
+          <div class="section__header">
+            <p class="section__eyebrow fade-in">Passions</p>
+            <h1 class="fade-in fade-in--delay-1" style="font-size: clamp(var(--text-4xl), 8vw, var(--text-5xl));">
+              Mes <span class="text-gradient">curiosites</span>
+            </h1>
+            <p class="section__description fade-in fade-in--delay-2">
+              Ce qui m'anime en dehors du code et de l'IA
+            </p>
+          </div>
+
+          <!-- Grille de curiosites -->
+          <div class="curiosities-grid">
+
+            <!-- Curiosite 1: Game Dev -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2"/>
+                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M6 12h.01"/>
+                  <path d="M18 12h.01"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">Creation de jeux</h3>
+              <p class="curiosity-card__text">
+                Passionne par le game design et le developpement de jeux video depuis que je suis tout jeune.
+                J'aime creer des experiences interactives, que ce soit des petits jeux ou parfois mon ambition m'amene a faire des 
+                projets que je n'arrive pas a finir...
+              </p>
+            </div>
+
+            <!-- Curiosite 2: Danse -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="4" r="2"/>
+                  <path d="m7 21 3-9"/>
+                  <path d="M9 12h6"/>
+                  <path d="m17 21-3-9"/>
+                  <path d="M12 6v6"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">Danse - Rock & Swing</h3>
+              <p class="curiosity-card__text">
+                Le rock et le swing sont mes danses de predilection. Un excellent moyen
+                de decompresser et de rencontrer des gens en dehors du monde tech (même si j'avoue y a pas mal d'informaticien).
+              </p>
+            </div>
+
+            <!-- Curiosite 3: Computer Vision -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v2"/>
+                  <path d="M12 21v2"/>
+                  <path d="M4.22 4.22l1.42 1.42"/>
+                  <path d="M18.36 18.36l1.42 1.42"/>
+                  <path d="M1 12h2"/>
+                  <path d="M21 12h2"/>
+                  <path d="M4.22 19.78l1.42-1.42"/>
+                  <path d="M18.36 5.64l1.42-1.42"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">La physique (quantique/relativité)</h3>
+              <p class="curiosity-card__text">
+                Je passe beaucoup de temps a voir des vidéos, lire parfois des livres de vulgarisation.
+                Je trouve ça absolument fascinant de comprendre les lois qui régissent notre univers.
+              </p>
+            </div>
+
+            <!-- Curiosite 4: 3D -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
+                  <path d="M12 12l8-4.5"/>
+                  <path d="M12 12v9"/>
+                  <path d="M12 12L4 7.5"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">politique et Economie</h3>
+              <p class="curiosity-card__text">
+                Je ne suis pas spécialement politisé, ni très calé dans ces deux domaines, mais en lisant et regardant
+                quelque chaine sur youtube (Stupid economics/Eureka..), je trouve ça super intéressant, et ça aide a se projeter dans l'avenir.
+              </p>
+            </div>
+
+            <!-- Curiosite 5: Deep Learning -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v8"/>
+                  <path d="m4.93 10.93 1.41 1.41"/>
+                  <path d="M2 18h2"/>
+                  <path d="M20 18h2"/>
+                  <path d="m19.07 10.93-1.41 1.41"/>
+                  <path d="M22 22H2"/>
+                  <path d="m8 6 4-4 4 4"/>
+                  <path d="M16 18a4 4 0 0 0-8 0"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">Le sport</h3>
+              <p class="curiosity-card__text">
+                En plus de la danse (que j'adore), je pratique la musculation et je découvre l'escalade.
+                Je vais pas faire de speech pour expliquer en quoi le sport est important.
+
+              </p>
+            </div>
+
+            <!-- Curiosite 6: Edge Computing -->
+            <div class="curiosity-card stagger-item">
+              <div class="curiosity-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <path d="M9 2v2"/>
+                  <path d="M15 2v2"/>
+                  <path d="M9 20v2"/>
+                  <path d="M15 20v2"/>
+                  <path d="M2 9h2"/>
+                  <path d="M2 15h2"/>
+                  <path d="M20 9h2"/>
+                  <path d="M20 15h2"/>
+                </svg>
+              </div>
+              <h3 class="curiosity-card__title">Danse (est ce que j'ai pas déja dit?)</h3>
+              <p class="curiosity-card__text">
+                C'est trop bon de danser, y a tellement de style, et c'est un moyen de communiquer tellement puissant.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Section Parcours -->
+          <div class="divider divider--gradient"></div>
+
+          <div class="section__header">
+            <p class="section__eyebrow fade-in">Formation</p>
+            <h2 class="section__title fade-in fade-in--delay-1">Mon parcours</h2>
+            <p class="section__description fade-in fade-in--delay-2">
+              De la decouverte du code a la specialisation en IA
+            </p>
+          </div>
+
+          <div style="max-width: var(--container-sm);">
+            <!-- Formation 1 -->
+            <article class="bento-item stagger-item" style="margin-bottom: var(--space-4);">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-3);">
+                <span class="tag tag--accent">En cours</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">
+                  2025 - 2027
+                </span>
+              </div>
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">
+                Master VMI - Vision et Machine Intelligente
+              </h3>
+              <p style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+                Universite Paris Cite. Specialisation en Computer Vision, Deep Learning
+                et traitement d'images. Recherche d'alternance pour Octobre 2026.
+              </p>
+            </article>
+
+            <!-- Formation 2 -->
+            <article class="bento-item stagger-item" style="margin-bottom: var(--space-4);">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-3);">
+                <span class="tag tag--accent">Licence</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">
+                  2021 - 2024
+                </span>
+              </div>
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">
+                Licence Informatique
+              </h3>
+              <p style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+                Fondamentaux de l'informatique : algorithmes, structures de donnees,
+                bases de donnees, reseaux et programmation orientee objet.
+              </p>
+            </article>
+
+            <!-- Objectifs -->
+            <article class="bento-item stagger-item">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-3);">
+                <span class="tag tag--accent">Objectif</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">
+                  Octobre 2026
+                </span>
+              </div>
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">
+                Alternance en Computer Vision / IA
+              </h3>
+              <p style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+                Je recherche une alternance d'un an pour approfondir mes competences
+                en vision par ordinateur et deploiement de modeles IA en production.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__left">
+            <span class="footer__logo">yanis.h</span>
+            <p class="footer__text">Computer Vision & IA</p>
+          </div>
+
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/yanis-hemdane-5b6553298/" class="footer__social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="mailto:yanishemdane@gmail.com" class="footer__social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
