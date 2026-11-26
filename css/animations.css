@@ -7,8 +7,8 @@
    ========================================================================== */
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
   transition: opacity var(--duration-slower) var(--ease-out),
               transform var(--duration-slower) var(--ease-out);
 }
@@ -27,11 +27,7 @@
 .fade-in--delay-6 { transition-delay: 600ms; }
 
 /* Directions */
-.fade-in--up { transform: translateY(30px); }
-.fade-in--down { transform: translateY(-30px); }
-.fade-in--left { transform: translateX(-30px); }
-.fade-in--right { transform: translateX(30px); }
-.fade-in--scale { transform: scale(0.95); }
+/* Contenu visible immediatement : plus de masquage avant le scroll */
 
 .fade-in--up.fade-in--visible,
 .fade-in--down.fade-in--visible,
@@ -49,12 +45,12 @@
    ========================================================================== */
 
 .stagger-item {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
 }
 
 .stagger-item--visible {
-  animation: staggerIn var(--duration-slower) var(--ease-out) forwards;
+  animation: none;
 }
 
 @keyframes staggerIn {
