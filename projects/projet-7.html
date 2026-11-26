@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIM vs photo de chantier - Yanis Hemdane">
+  <meta name="author" content="Yanis Hemdane">
+  <meta name="theme-color" content="#0a0a0b">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+  <title>BIM vs photo de chantier — Yanis Hemdane</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="spotlight" id="spotlight"></div>
+
+  <div class="page">
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="../index.html" class="header__logo">
+            <span class="header__logo-dot"></span>
+            yanis.h
+          </a>
+
+          <nav class="header__nav" id="nav">
+            <a href="../index.html" class="header__link">Accueil</a>
+            <a href="../projects.html" class="header__link header__link--active">Projets</a>
+            <a href="../curiosites.html" class="header__link">Curiosites</a>
+            <a href="../cv/CV_Yanis_Hemdane.pdf" class="header__link" target="_blank" rel="noopener">CV</a>
+          </nav>
+
+          <div class="header__status">
+            <span class="header__status-dot"></span>
+            Disponible sept. 2027
+          </div>
+
+          <button class="header__menu-btn" id="menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="page__content">
+      <section class="section" style="padding-top: 120px;">
+        <div class="container">
+
+          <!-- Header du projet -->
+          <div class="project-header fade-in">
+            <a href="../projects.html" class="project-header__back">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Retour aux projets
+            </a>
+
+            <span class="tag tag--accent" style="margin-top: var(--space-4);">Computer Vision &amp; BIM</span>
+
+            <h1 class="fade-in fade-in--delay-1" style="font-size: clamp(var(--text-3xl), 6vw, var(--text-4xl)); margin-top: var(--space-3);">
+              <span class="text-gradient">BIM vs photo de chantier</span>
+            </h1>
+
+            <p class="fade-in fade-in--delay-2" style="color: var(--color-text-secondary); font-size: var(--text-lg); max-width: 600px; margin-top: var(--space-3);">
+              Retrouver la vue BIM d'une photo de chantier, aligner les deux images et signaler les ecarts.
+            </p>
+          </div>
+
+          <!-- Image principale -->
+          <div class="project-hero-image fade-in fade-in--delay-2" style="margin-top: var(--space-8);">
+            <img src="../Image/bim/bim_vs_photo.jpg" alt="BIM vs photo de chantier" style="width: 100%; border-radius: var(--radius-lg);">
+          </div>
+
+          <!-- Contenu du projet -->
+          <div class="project-info">
+
+            <!-- Description -->
+            <div class="project-description fade-in">
+              <h2>A propos du projet</h2>
+
+              <p>
+                Sur un chantier, le chef de chantier prend des photos et veut savoir ce qui
+                ne correspond pas a la maquette numerique (BIM). Le projet retrouve
+                automatiquement la vue BIM qui correspond a une photo, aligne les deux images,
+                puis signale les ecarts.
+              </p>
+
+              <h2 style="margin-top: var(--space-8);">1. Retrouver la bonne vue BIM</h2>
+
+              <p>
+                J'ai compare plusieurs familles de descripteurs sur de vraies paires BIM / photo :
+                HOG, DINOv2 (token CLS et tokens de patchs), LightGlue et LoFTR. Les rendus BIM
+                n'ont ni texture ni eclairage realiste, donc le matching de points seul echoue
+                souvent (23 % de top-1 avec LightGlue). Un descripteur base sur les contours
+                atteint 69 % de top-1 et 88 % de top-3.
+              </p>
+
+              <h2 style="margin-top: var(--space-8);">2. Aligner la photo sur le BIM</h2>
+
+              <p>
+                Correspondances denses (LoFTR, plus proches voisins mutuels entre patchs DINOv2),
+                filtrees par RANSAC / MAGSAC pour estimer une homographie. Quand il y a trop peu de
+                points, une recherche sur GPU de la rotation et du zoom de la camera
+                (H = K&middot;R&middot;K<sup>-1</sup>) maximise l'alignement des contours.
+              </p>
+
+              <figure style="margin: var(--space-6) 0;">
+                <img src="../Image/bim/correspondances.jpg" alt="Points communs retenus entre le rendu BIM et la photo (lignes vertes)." loading="lazy" style="width: 100%; border-radius: var(--radius-lg);">
+                <figcaption style="color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-2);">Points communs retenus entre le rendu BIM et la photo (lignes vertes).</figcaption>
+              </figure>
+              <figure style="margin: var(--space-6) 0;">
+                <img src="../Image/bim/recalage.jpg" alt="Contours du BIM projetes sur la photo, avant et apres recalage." loading="lazy" style="width: 100%; border-radius: var(--radius-lg);">
+                <figcaption style="color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-2);">Contours du BIM projetes sur la photo, avant et apres recalage.</figcaption>
+              </figure>
+
+              <h2 style="margin-top: var(--space-8);">3. Separer les vrais ecarts des objets temporaires</h2>
+
+              <p>
+                Un chantier est plein d'objets qui ne sont pas dans le BIM : barrieres, echelles,
+                cartons, personnes. Une detection a vocabulaire ouvert (Grounding DINO) et des
+                masques SAM les ecartent avant de comparer, puis un VLM verifie les ecarts restants
+                et un rapport PDF est genere.
+              </p>
+
+              <figure style="margin: var(--space-6) 0;">
+                <img src="../Image/bim/obstacles.jpg" alt="Objets temporaires detectes automatiquement (barrieres de chantier)." loading="lazy" style="width: 100%; border-radius: var(--radius-lg);">
+                <figcaption style="color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-2);">Objets temporaires detectes automatiquement (barrieres de chantier).</figcaption>
+              </figure>
+
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">
+                Projet de R&amp;D en cours chez FCT-Arcy. Code non public.
+              </p>
+            </div>
+
+            <!-- Metadonnees -->
+            <aside class="project-meta fade-in">
+              <div class="bento-item">
+                <div class="project-meta__item">
+                  <h3>Annee</h3>
+                  <p>2026</p>
+                </div>
+
+                <div class="project-meta__item">
+                  <h3>Role</h3>
+                  <p>Ingenieur CV (R&amp;D)</p>
+                </div>
+
+                <div class="project-meta__item">
+                  <h3>Contexte</h3>
+                  <p>FCT-Arcy - construction</p>
+                </div>
+
+                <div class="project-meta__item">
+                  <h3>Technologies</h3>
+                  <div class="tags" style="margin-top: var(--space-2);">
+                    <span class="tag">DINOv2</span>
+                    <span class="tag">LoFTR</span>
+                    <span class="tag">LightGlue</span>
+                    <span class="tag">HOG</span>
+                    <span class="tag">RANSAC</span>
+                    <span class="tag">Grounding DINO</span>
+                    <span class="tag">SAM</span>
+                    <span class="tag">VLM</span>
+                    <span class="tag">PyTorch</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+
+          <!-- Navigation entre projets -->
+          <div class="divider divider--gradient"></div>
+
+          <div class="project-nav fade-in">
+            <a href="projet-6.html" class="project-nav__link">
+              <span class="project-nav__label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Projet precedent
+              </span>
+              <span class="project-nav__title">Stage Recherche - TELUQ</span>
+            </a>
+            <a href="projet-8.html" class="project-nav__link project-nav__link--next">
+              <span class="project-nav__label">
+                Projet suivant
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+              <span class="project-nav__title">YRYS - video-analytique</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__left">
+            <span class="footer__logo">yanis.h</span>
+            <p class="footer__text">Computer Vision & IA</p>
+          </div>
+
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/yanis-hemdane-5b6553298/" class="footer__social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="mailto:yanishemdane@gmail.com" class="footer__social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

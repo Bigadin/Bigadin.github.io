@@ -32,11 +32,12 @@
             <a href="index.html" class="header__link header__link--active">Accueil</a>
             <a href="projects.html" class="header__link">Projets</a>
             <a href="curiosites.html" class="header__link">Curiosites</a>
+            <a href="cv/CV_Yanis_Hemdane.pdf" class="header__link" target="_blank" rel="noopener">CV</a>
           </nav>
 
           <div class="header__status">
             <span class="header__status-dot"></span>
-            Recherche alternance
+            Disponible sept. 2027
           </div>
 
           <button class="header__menu-btn" id="menu-btn" aria-label="Menu">
@@ -57,7 +58,7 @@
           <div class="hero">
             <div class="hero__badge fade-in">
               <span class="hero__badge-dot"></span>
-              Recherche alternance 1 an - Octobre 2026
+              Disponible sept. 2027 1 an - Octobre 2026
             </div>
 
             <h1 class="hero__title fade-in fade-in--delay-1">
@@ -79,6 +80,9 @@
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
+              </a>
+              <a href="cv/CV_Yanis_Hemdane.pdf" class="btn btn--secondary" target="_blank" rel="noopener">
+                Mon CV (PDF)
               </a>
               <a href="#contact" class="btn btn--secondary">
                 Me contacter
@@ -271,12 +275,63 @@
           </div>
 
           <div class="projects-grid">
+            <!-- Projets vision industrielle -->
+            <a href="projects/projet-7.html" class="card stagger-item">
+              <div class="card__image">
+                <img src="Image/bim/bim_vs_photo.jpg" alt="BIM vs photo de chantier" loading="lazy">
+              </div>
+              <div class="card__content">
+                <span class="card__tag">Computer Vision &amp; BIM</span>
+                <h3 class="card__title">BIM vs photo de chantier</h3>
+                <p class="card__description">
+                  Retrouver la vue BIM d'une photo de chantier, l'aligner et signaler les ecarts.
+                </p>
+                <div class="card__footer">
+                  <div class="card__techs">
+                    <span class="tag">DINOv2</span>
+                    <span class="tag">LoFTR</span>
+                    <span class="tag">SAM</span>
+                  </div>
+                  <div class="card__arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="projects/projet-8.html" class="card stagger-item">
+              <div class="card__image">
+                <img src="Image/yrys.jpg" alt="YRYS - video-analytique" loading="lazy">
+              </div>
+              <div class="card__content">
+                <span class="card__tag">Computer Vision</span>
+                <h3 class="card__title">YRYS - video-analytique</h3>
+                <p class="card__description">
+                  Presence par zone et comptage de passages en temps reel sur flux camera.
+                </p>
+                <div class="card__footer">
+                  <div class="card__techs">
+                    <span class="tag">YOLO</span>
+                    <span class="tag">ByteTrack</span>
+                    <span class="tag">FastAPI</span>
+                  </div>
+                  <div class="card__arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
             <!-- Projet 1: Solutions CV Arcy -->
             <a href="projects/projet-1.html" class="card stagger-item">
               <div class="card__image">
-                <div class="card__image-placeholder">
-                  computer-vision.png
-                </div>
+                <img src="Image/projet1.png" alt="" loading="lazy">
               </div>
               <div class="card__content">
                 <span class="card__tag">Computer Vision</span>
@@ -302,9 +357,7 @@
             <!-- Projet 2: Reconstruction VR -->
             <a href="projects/projet-2.html" class="card stagger-item">
               <div class="card__image">
-                <div class="card__image-placeholder">
-                  vr-medical.png
-                </div>
+                <img src="Image/projet2.png" alt="" loading="lazy">
               </div>
               <div class="card__content">
                 <span class="card__tag">IA Medical / VR</span>
@@ -327,61 +380,6 @@
               </div>
             </a>
 
-            <!-- Projet 3: R-E Game -->
-            <a href="projects/projet-3.html" class="card stagger-item">
-              <div class="card__image">
-                <div class="card__image-placeholder">
-                  game-dev.png
-                </div>
-              </div>
-              <div class="card__content">
-                <span class="card__tag">Game Dev</span>
-                <h3 class="card__title">R-E (Roguelite)</h3>
-                <p class="card__description">
-                  Jeu video roguelite top-view avec generation procedurale et modeles 3D.
-                </p>
-                <div class="card__footer">
-                  <div class="card__techs">
-                    <span class="tag">Unity</span>
-                    <span class="tag">Blender</span>
-                  </div>
-                  <div class="card__arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Projet 4: Protocole Reseau -->
-            <a href="projects/projet-4.html" class="card stagger-item">
-              <div class="card__image">
-                <div class="card__image-placeholder">
-                  network.png
-                </div>
-              </div>
-              <div class="card__content">
-                <span class="card__tag">Reseau</span>
-                <h3 class="card__title">Protocole Navigo</h3>
-                <p class="card__description">
-                  Simulation d'un protocole reseau type carte Navigo avec base de donnees.
-                </p>
-                <div class="card__footer">
-                  <div class="card__techs">
-                    <span class="tag">Java</span>
-                    <span class="tag">PostgreSQL</span>
-                  </div>
-                  <div class="card__arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </a>
           </div>
 
           <div style="text-align: center; margin-top: var(--space-12);">
